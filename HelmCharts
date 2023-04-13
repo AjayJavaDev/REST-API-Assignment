@@ -1,0 +1,55 @@
+image:
+  repository: my-video-service
+  tag: latest
+
+service:
+  port: 8080
+  type: ClusterIP
+
+deployment:
+  replicas: 1
+
+apiVersion: v2
+name: my-video-service
+description: A Helm chart for deploying the video microservice
+version: 0.1.0
+appVersion: 1.0.0
+
+values:
+  image:
+    repository: my-video-service
+    tag: latest
+
+  ingress:
+    enabled: false
+
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 200m
+      memory: 256Mi
+
+  livenessProbe:
+    httpGet:
+      path: /actuator/health/liveness
+      port: http
+    initialDelaySeconds: 30
+    timeoutSeconds: 5
+    periodSeconds: 10
+    successThreshold: 1
+    failureThreshold: 3
+
+  readinessProbe:
+    httpGet:
+      path: /actuator/health/readiness
+      port: http
+    initialDelaySeconds: 30
+    timeoutSeconds: 5
+    periodSeconds: 10
+    successThreshold: 1
+    failureThreshold: 3
+
+
+
