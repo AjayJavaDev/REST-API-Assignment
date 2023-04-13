@@ -1,3 +1,4 @@
 FROM openjdk:1.8
-ADD target/myapp.jar/app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+WORKDIR /rest-api
+COPY target/SpringSwagger-0.0.1-SNAPSHOT.war /rest-api
+CMD ["java", "-jar", "SpringSwagger-0.0.1-SNAPSHOT.war"]
