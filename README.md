@@ -34,7 +34,7 @@ Content-Type: application/json
   "title": "Video",
   "description": "This is a video",
   "duration": 1200,
-  "thumbNail": "http://example.com/thumb.jpg",
+  "thumbNail": "http://videoexample.com/thumbnail.jpg",
   "createdTime": "2023-04-13T12:00:00Z"
 }
 
