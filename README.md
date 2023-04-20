@@ -31,6 +31,16 @@ Here is for Example: -
 
 Create a new video
 
+Request Body
+
+| Field       | Type     | Description                                           |
+| ----------- | -------- | ----------------------------------------------------- |
+| title       | string   | The title of the video (required)                     |
+| description | string   | The description of the video (required)               |
+| duration    | long     | The duration of the video in seconds (required)       |
+| thumbnail   | string   | The URL of the video thumbnail (optional)              |
+| createdTime | datetime | The date and time when the video was created (required)|
+
 POST /videos
 Content-Type: application/json
 
