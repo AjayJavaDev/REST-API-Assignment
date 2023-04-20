@@ -14,9 +14,13 @@ MySQL
 Installation
 
 Clone the repository
+
 Build the project: ./mvn package
+
 Build the Docker: docker build -t rest-video .
+
 Push the Docker image to your Docker repository: docker push my-docker-repo/my-video-app
+
 Install the Helm chart: helm install my-video-app ./my-video-app
 
 Usage
